@@ -96,9 +96,48 @@ $group_of_students =[
                 // }
                  
                 foreach($group_of_students as $std){
-                    echo"<br>"
+                    echo"<br>";
                     echo "id". ':' .$std['id'];
                     echo "name". ':' .$std['name'];
                     echo "email". ':' .$std['email'];
                 }
+?>
+<?php
+
+$students = [
+  [
+    "id" => "A05",
+    "name" => "Ram kc",
+    "email" => "ram1@gmail.com",
+    "Mobile" => 0233445
+  ],
+  [
+    "id" => "A02",
+    "name" => "Sam kc",
+    "email" => "sam1@gmail.com",
+    "Mobile" => 0233467
+  ]
+];
+
+// Print table header
+echo "<table>";
+echo "<tr>";
+foreach ($students[0] as $key => $value) { // Access keys from the first student
+  echo "<th>", $key, "</th>";
+}
+echo "</tr>";
+
+// Print table rows
+echo "<tbody>";
+foreach ($students as $student) {
+  echo "<tr>";
+  foreach ($student as $value) { // Iterate through values in each student
+    echo "<td>", $value, "</td>";
+  }
+  echo "</tr>";
+}
+echo "</tbody>";
+
+echo "</table>";
+
 ?>
