@@ -119,25 +119,45 @@ $students = [
   ]
 ];
 
-// Print table header
-echo "<table>";
-echo "<tr>";
-foreach ($students[0] as $key => $value) { // Access keys from the first student
-  echo "<th>", $key, "</th>";
-}
-echo "</tr>";
+// // Print table header
+// echo "<table>";
+// echo "<tr>";
+// foreach ($students[0] as $key => $value) { // Access keys from the first student
+//   echo "<th>", $key, "</th>";
+// }
+// echo "</tr>";
 
-// Print table rows
-echo "<tbody>";
-foreach ($students as $student) {
-  echo "<tr>";
-  foreach ($student as $value) { // Iterate through values in each student
-    echo "<td>", $value, "</td>";
-  }
-  echo "</tr>";
-}
-echo "</tbody>";
+// // Print table rows
+// echo "<tbody>";
+// foreach ($students as $student) {
+//   echo "<tr>";
+//   foreach ($student as $value) { // Iterate through values in each student
+//     echo "<td>", $value, "</td>";
+//   }
+//   echo "</tr>";
+// }
+// echo "</tbody>";
 
-echo "</table>";
+// echo "</table>";
 
 ?>
+<table border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>Mobile</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($students as $value) {?>
+            <tr>
+                <td><?php echo  $value['id'];?></td>
+                <td><?php echo  $value['name'];?></td>
+                <td><?php echo $value['email'];?></td>
+                <td><?php echo $value['Mobile'];?></td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
